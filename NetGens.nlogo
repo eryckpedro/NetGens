@@ -2,9 +2,22 @@ breed [ervilhas ervilha]
 ervilhas-own [nome tipo alelo]
 
 to setup
-  reset-ticks
   clear-all
+  reset-ticks
   set-default-shape turtles "circle"
+end
+
+to simular
+  tick
+
+  if (ticks mod intervalo-reprod = 0)
+  [
+    let ervSort random 3
+    if (ervSort = 0)[ criarErvilhaVerde ]
+    if (ervSort = 1)[ criarErvilhaAmarela ]
+    if (ervSort = 2)[ criarErvilhaAmarelaHibrida ]
+  ]
+
 end
 
 to criarErvilhaVerde
@@ -44,10 +57,10 @@ to criarErvilhaAmarelaHibrida
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-230
-13
-667
-451
+222
+9
+659
+447
 -1
 -1
 13.0
@@ -71,10 +84,10 @@ ticks
 30.0
 
 BUTTON
-71
-14
-141
-48
+21
+16
+91
+50
 Reset
 setup
 NIL
@@ -137,6 +150,64 @@ NIL
 NIL
 NIL
 1
+
+SLIDER
+25
+219
+198
+253
+num-cruzamentos
+num-cruzamentos
+0
+5
+2.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+25
+269
+198
+303
+num-filhos
+num-filhos
+0
+8
+4.0
+1
+1
+NIL
+HORIZONTAL
+
+BUTTON
+118
+17
+191
+51
+Iniciar
+simular
+T
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+INPUTBOX
+66
+322
+151
+383
+intervalo-reprod
+1000.0
+1
+0
+Number
 
 @#$#@#$#@
 ## WHAT IS IT?
