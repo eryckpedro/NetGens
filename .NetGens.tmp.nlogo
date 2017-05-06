@@ -14,6 +14,11 @@ to simular
 
   if (ticks mod intervalo-reprod = 0)
   [
+    let tabelaProb table:make
+    table:put tabelaProb "AA" 0
+    table:put tabelaProb "Aa" 0
+    table:put tabelaProb "aa" 0
+
     repeat num-cruzamentos
     [
       let pos_i 0
@@ -26,14 +31,25 @@ to simular
       [
         repeat 2
         [
-          print word ( item pos_i ([alelo] of erv1) ) ( item pos_j ([alelo] of erv2) )
+          let res word ( item pos_i ([alelo] of erv1) ) ( item pos_j ([alelo] of erv2) )
+          if res = "aA" [ set res "Aa" ]
+
+          if res = "AA"[ table:put tabelaProb "AA" (table:get tabelaProb "AA" + 0.25) ]
+
+          if res = "Aa"[ table:put tabelaProb "Aa" (table:get tabelaProb "Aa" + 0.25) ]
+
+          if res = "aa"[ table:put tabelaProb "aa" (table:get tabelaProb "aa" + 0.25) ]
+
           set pos_j pos_j + 1
         ]
+        set pos_j 0
         set pos_i pos_i + 1
-
       ]
 
     ]
+
+    print tabelaProb
+
   ]
 
 end
@@ -178,7 +194,7 @@ num-cruzamentos
 num-cruzamentos
 0
 5
-2.0
+1.0
 1
 1
 NIL
@@ -222,7 +238,7 @@ INPUTBOX
 151
 383
 intervalo-reprod
-10000.0
+5000.0
 1
 0
 Number
