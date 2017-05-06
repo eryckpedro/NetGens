@@ -1,3 +1,5 @@
+extensions [table]
+
 breed [ervilhas ervilha]
 ervilhas-own [nome tipo alelo]
 
@@ -12,10 +14,26 @@ to simular
 
   if (ticks mod intervalo-reprod = 0)
   [
-    let ervSort random 3
-    if (ervSort = 0)[ criarErvilhaVerde ]
-    if (ervSort = 1)[ criarErvilhaAmarela ]
-    if (ervSort = 2)[ criarErvilhaAmarelaHibrida ]
+    repeat num-cruzamentos
+    [
+      let pos_i 0
+      let pos_j 0
+
+      let erv1 one-of ervilhas
+      let erv2 one-of ervilhas
+
+      repeat 2
+      [
+        repeat 2
+        [
+          print word ( item pos_i ([alelo] of erv1) ) ( item pos_j ([alelo] of erv2) )
+          set pos_j pos_j + 1
+        ]
+        set pos_i pos_i + 1
+
+      ]
+
+    ]
   ]
 
 end
@@ -155,7 +173,7 @@ SLIDER
 25
 219
 198
-253
+252
 num-cruzamentos
 num-cruzamentos
 0
@@ -170,7 +188,7 @@ SLIDER
 25
 269
 198
-303
+302
 num-filhos
 num-filhos
 0
@@ -201,10 +219,10 @@ NIL
 INPUTBOX
 66
 322
-156
+151
 383
 intervalo-reprod
-1000.0
+10000.0
 1
 0
 Number
