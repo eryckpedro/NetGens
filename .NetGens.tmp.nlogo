@@ -46,11 +46,28 @@ to simular
         set pos_i pos_i + 1
       ]
 
+      let numErvVerdes round (num-filhos * table:get tabelaProb "aa")
+      let numErvAmar round (num-filhos * table:get tabelaProb "AA")
+      let numErvAmarHib round (num-filhos * table:get tabelaProb "Aa")
+
+      criaItem 1 numErvVerdes
+      criaItem 2 numErvAmar
+      criaItem 3 numErvAmarHib
+
     ]
 
-    print tabelaProb
-
+    table:clear tabelaProb
   ]
+
+end
+
+to criaItem [tipoErv qtd]
+
+  if (tipoErv = 1) [ repeat qtd [ criarErvilhaVerde ] ]
+
+  if (tipoErv = 2) [ repeat qtd [ criarErvilhaAmarela ] ]
+
+  if (tipoErv = 3) [ repeat qtd [ criarErvilhaAmarelaHibrida ] ]
 
 end
 
@@ -192,7 +209,7 @@ SLIDER
 252
 num-cruzamentos
 num-cruzamentos
-0
+1
 5
 1.0
 1
@@ -209,7 +226,7 @@ num-filhos
 num-filhos
 0
 8
-4.0
+2.0
 1
 1
 NIL
