@@ -226,7 +226,7 @@ num-filhos
 num-filhos
 1
 8
-1.0
+4.0
 1
 1
 NIL
@@ -259,6 +259,26 @@ intervalo-reprod
 1
 0
 Number
+
+PLOT
+110
+456
+661
+616
+População de Ervilhas
+Tempo (ticks)
+Num Ervilhas
+0.0
+10.0
+0.0
+10.0
+true
+true
+"" ""
+PENS
+"Verdes" 1.0 0 -10899396 true "" "plot count ervilhas with [alelo = \"aa\"]"
+"Amarelas" 1.0 0 -1184463 true "" "plot count ervilhas with [alelo = \"AA\"]"
+"Amarelas Híbridas" 1.0 0 -4079321 true "" "plot count ervilhas with [alelo = \"Aa\"]"
 
 @#$#@#$#@
 ## WHAT IS IT?
