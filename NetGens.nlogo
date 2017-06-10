@@ -281,6 +281,91 @@ PENS
 "Amarelas Híbridas" 1.0 0 -4079321 true "" "plot count ervilhas with [alelo = \"Aa\"]"
 
 @#$#@#$#@
+## PT-BR
+
+## O QUE É?
+
+O NetGens é um ambiente de simulação que permite que seus usuários criem cenários
+do Experimento de Mendel, de forma a estudar como funcionam os cruzamentos mendelianos
+envolvendo as ervilhas Verde, Amarela e Amarela Híbrida.
+
+## COMO FUNCIONA
+
+Os agentes, sendo cada ervilha, irão cruzar entre si uma vez que estejam no micro-mundo.
+Os resultados das combinações são mostrados imediatamente com as ervilhas resultantes sendo instanciadas automaticamente.
+
+Lembre-se que características dominantes se sobrepõe às recessivas neste cenário.
+
+Ervilha Verde possui o alelo "aa", que é homozigoto recessivo.
+Ervilha Amarela possui o alelo "AA", que é homozigoto dominante.
+Ervilha Amarela Híbrida possui o alelo "Aa", que é heterozigota.
+
+Um exemplo de combinação:
+
+Verde x Amarela Híbrida= aa x Aa = Aa, aa, Aa, aa.
+
+Ou seja, 50% de ervilhas Amarelas Híbridas e 50% de ervilhas verdes. Se forem gerados dois filhos, um será verde e outro amarelo híbrido.
+
+## COMO USAR
+
+Como padrão de todos os modelos do NetLogo, primeiramente é necessário inicializar o ambiente, logo o botão Reset necessita ser pressionado para o micromundo estar preparado para uso.
+
+Após inicializar o ambiente, adicione ervilhas ao micromundo clicando nos respectivos botões de cada uma delas. As combinações são feitas aleatoriamente selecionando duas ervilhas a cada intervalo de tempo fixo (que pode ser editado).
+
+Você pode adicionar ervilhas enquanto o ambiente está em simulação, as novas instâncias surgem sendo sujeitas à serem combinadas. Mudar os parâmetros nos sliders também afetam o desenrolar do experimento em tempo real.
+
+
+Lista de Botões:
+
+- Reset: Aplica as configurações iniciais ao micromundo, apagando todas as ervilhas existentes.
+
+- Iniciar: Começa a simulação, note que é preciso ter pelo menos uma ervilha no micromundo para a combinação funcionar!
+
+- Ervilha Verde|Amarela|Amarela Híbrida: Instancia uma ervilha correspondente no micromundo.
+
+
+Lista de Sliders:
+
+- num-cruzamentos: Determina quantas combinações aleatórias são feitas por vez.
+
+- num-filhos: Determina quantas ervilhas resultantes de cada combinação são geradas a cada cruzamento.
+
+
+Lista de Inputs:
+
+- intervalo-reprod: Medido em ticks, determina quanto de tempo de simulação deve passar antes de ocorrer o evento de cruzamento entre ervilhas.
+
+
+
+## FATOS INTERESSANTES
+
+O gráfico populacional na parte inferior do display mostra o total de cada ervilha em tempo real. Utilize-o para verificar como se comportam os cruzamentos de acordo com a quantidade de ervilhas no micromundo.
+
+É curioso perceber que o fator de probabilidade influencia na escolha entre as ervilhas a serem combinadas, e este vai sendo modificado de acordo com o número das mesmas após as combinações, com novas surgindo.
+
+
+## TENTE TAMBÉM
+
+Experimente deixar apenas um tipo de ervilha ao início da simulação e veja o que acontece quando a iniciar.
+
+Adicione novos tipos de ervilhas e tente observar se a inclusão das mesmas acarreta em algo na população.
+
+Um método de aumentar a população mais rápido é aumentar os sliders de num-cruzamentos e num-filhos. Mexa nessas configurações e observe o que acontece na simulação.
+
+Para modificar a forma do gráfico, o que você faria? Ele sempre será crescente, pois as ervilhas não morrem, porém, existe um intervalo que ele se mantém constante... identifique o parâmetro que você acha que pode fazê-lo mudar e interaja com ele.
+
+
+## MODELOS RELACIONADOS
+
+Os modelos na biblioteca do NetLogo que mais se assemelham ao NetGens são os em Evolução, na seção de Biologia. Contudo, eles estão disponíveis na Língua Inglesa.
+
+
+## CRÉDITOS E REFERÊNCIAS
+
+O NetGens foi desenvolvido por Eryck Pedro da Silva como Trabalho Final da disciplina de Introdução à Informática e Educação do Programa de Pós-Graduação em Informática da Universidade Federal do Rio de Janeiro, sob orientação do professor Fábio Ferrentini no período de 2017-1.
+
+
+## EN-US
 ## WHAT IS IT?
 
 (a general understanding of what the model is trying to show or explain)
